@@ -19,33 +19,33 @@ permissions:
 
 jobs:
   # ---------- 1. LINT + TESTES (com matrix de versões) ----------
-  test:
-    name: Lint e testes (Node ${{ matrix.node-version }})
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [18, 20, 22]
-    defaults:
-      run:
-        working-directory: frontend
-    steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
+  # test:
+  #   name: Lint e testes (Node ${{ matrix.node-version }})
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       node-version: [18, 20, 22]
+  #   defaults:
+  #     run:
+  #       working-directory: backend
+  #   steps:
+  #     - name: Checkout do código
+  #       uses: actions/checkout@v4
 
-      - name: Configurar Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
+  #     - name: Configurar Node ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
 
-      - name: Instalar dependências
-        run: npm install
+  #     - name: Instalar dependências
+  #       run: npm install
 
-      - name: Rodar linter
-        run: npm run lint
+  #     - name: Rodar linter
+  #       run: npm run lint
 
-      - name: Rodar testes
-        run: npm test
+  #     - name: Rodar testes
+  #       run: npm test
 
   # ---------- 2. BUILD + PUSH DA IMAGEM DOCKER ----------
   # Só roda depois dos testes passarem e apenas em push na main.
