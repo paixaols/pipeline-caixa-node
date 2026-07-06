@@ -63,7 +63,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN_GITHUB }}
 
       # - name: Build e push do backend
       #   uses: docker/build-push-action@v6
