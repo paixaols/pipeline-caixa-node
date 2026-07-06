@@ -28,7 +28,7 @@ jobs:
         node-version: [18, 20, 22]
     defaults:
       run:
-        working-directory: nodejs-app/backend
+        working-directory: frontend
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
