@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js que recebe uma mensagem e responde 'recebido'",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
