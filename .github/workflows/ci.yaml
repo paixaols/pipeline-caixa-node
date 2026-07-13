@@ -2,6 +2,7 @@ name: Node.js CI/CD
 
 # Dispara em pushes e PRs, mas só quando algo do app Node muda.
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
