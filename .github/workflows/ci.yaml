@@ -107,3 +107,13 @@ jobs:
       - name: Publicar no Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Registrar inicio
+        run: echo "START_TIME=$(date +%s)" >> $GITHUB_ENV
+      - run: npm test
+      - name: Registrar duracao
+        if: always()
+        run: echo "Duracao: $(($(date +%s) - START_TIME))s"
