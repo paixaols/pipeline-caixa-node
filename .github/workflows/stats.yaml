@@ -14,7 +14,7 @@ on:
       - "backend/**"
 
 jobs:
-  ci:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Registrar inicio
