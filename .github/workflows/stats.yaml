@@ -1,3 +1,18 @@
+name: Job summary
+
+# Dispara em pushes e PRs, mas só quando algo do app Node muda.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - "backend/**"
+  pull_request:
+    paths:
+      - "frontend/**"
+      - "backend/**"
+
 jobs:
   ci:
     runs-on: ubuntu-latest
